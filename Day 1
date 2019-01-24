@@ -1,0 +1,16 @@
+Day 1: 1/24/2019
+
+You want to replace '!!' by '{{' and '||' by '}}' in data column of table. How would you do it.
+
+=> You can do it by using Replace function in Update statement of SQL Server as below,
+
+ 
+
+
+UPDATE dbo.MasterData
+SET Value = REPLACE(REPLACE(Data, '!!', '{{'),'||','}}')
+
+WHERE ID = 1
+
+Inner Replace function is used for replacing '!!' characters and outer replace function is used to replace  '||'.
+
